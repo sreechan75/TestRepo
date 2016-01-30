@@ -26,19 +26,31 @@ public class MyWeirdStringTest {
 		assertEquals(5, myweirdstring.countDigits());
 	}
 
-	@Test
+	/**
+	 * Passing null should throw an IllegalArgumentException
+	 */
+	@Test(expected=IllegalArgumentException.class)
 	public void testCountDigits2() {
-		fail("Not yet implemented");
+		myweirdstring.setWeirdString(null);
+		myweirdstring.countDigits();
 	}
 
+	/**
+	 * Passing an empty String, "", should return 0
+	 */
 	@Test
 	public void testCountDigits3() {
-		fail("Not yet implemented");
+		myweirdstring.setWeirdString("");
+		assertEquals(0, myweirdstring.countDigits());
 	}
 
+	/**
+	 * Passing a String with NO digits should return 0
+	 */
 	@Test
 	public void testCountDigits4() {
-		fail("Not yet implemented");
+		myweirdstring.setWeirdString("SCHAHANAPALLY");
+		assertEquals(0, myweirdstring.countDigits());
 	}
 
 	@Test
@@ -47,19 +59,31 @@ public class MyWeirdStringTest {
 		assertEquals("' etrptsm 1isi hs5rn,rgt", myweirdstring.getEvenCharacters());
 	}
 
-	@Test
+	/**
+	 * Passing null should throw an IllegalArgumentException
+	 */
+	@Test(expected=IllegalArgumentException.class)
 	public void testGetEvenCharacters2() {
-		fail("Not yet implemented");
+		myweirdstring.setWeirdString(null);
+		myweirdstring.getEvenCharacters();
 	}
 
+	/**
+	 * Passing an empty String, "", should return an empty String back.
+	 */
 	@Test
 	public void testGetEvenCharacters3() {
-		fail("Not yet implemented");
+		myweirdstring.setWeirdString("");
+		assertEquals("", myweirdstring.getEvenCharacters());
 	}
 
+	/**
+	 * Passing a Single Character String should return an empty String back.
+	 */
 	@Test
 	public void testGetEvenCharacters4() {
-		fail("Not yet implemented");
+		myweirdstring.setWeirdString("S");
+		assertEquals("", myweirdstring.getEvenCharacters());
 	}
 
 	@Test
@@ -68,19 +92,31 @@ public class MyWeirdStringTest {
 		assertEquals("Idbte u 0edgt nti t19 ih?", myweirdstring.getOddCharacters());
 	}
 
-	@Test
+	/**
+	 * Passing null should throw an IllegalArgumentException
+	 */
+	@Test(expected=IllegalArgumentException.class)
 	public void testGetOddCharacters2() {
-		fail("Not yet implemented");
+		myweirdstring.setWeirdString(null);
+		myweirdstring.getOddCharacters();
 	}
 
+	/**
+	 * Passing an empty String, "", should return an empty String back.
+	 */
 	@Test
 	public void testGetOddCharacters3() {
-		fail("Not yet implemented");
+		myweirdstring.setWeirdString("");
+		assertEquals("", myweirdstring.getOddCharacters());
 	}
 
+	/**
+	 * Passing a Single Character String should return the same String back.
+	 */
 	@Test
 	public void testGetOddCharacters4() {
-		fail("Not yet implemented");
+		myweirdstring.setWeirdString("S");
+		assertEquals("S", myweirdstring.getOddCharacters());
 	}
 
 	@Test
@@ -90,19 +126,31 @@ public class MyWeirdStringTest {
 		assertEquals("I'd better put s0me d1gits in this 5tr1nIX, right?", myweirdstring.getWeirdString());
 	}
 
-	@Test
+	/**
+	 * startPosition > endPosition throws IllegalArgumentException
+	 */
+	@Test(expected=IllegalArgumentException.class)
 	public void testConvertDigitsToRomanNumeralsInSubstring2() {
-		fail("Not yet implemented");
+		myweirdstring.setWeirdString("I'd better put s0me d1gits in this 5tr1n9, right?");
+		myweirdstring.convertDigitsToRomanNumeralsInSubstring(45, 40);
 	}
 
-	@Test
+	/**
+	 * endPosition >= String length throws MyIndexOutOfBoundsException
+	 */
+	@Test(expected=MyIndexOutOfBoundsException.class)
 	public void testConvertDigitsToRomanNumeralsInSubstring3() {
-		fail("Not yet implemented");
+		myweirdstring.setWeirdString("SCHAHANAPALLY");
+		myweirdstring.convertDigitsToRomanNumeralsInSubstring(1, 14);
 	}
 
-	@Test
+	/**
+	 * Passing null should throw an IllegalArgumentException
+	 */
+	@Test(expected=IllegalArgumentException.class)
 	public void testConvertDigitsToRomanNumeralsInSubstring4() {
-		fail("Not yet implemented");
+		myweirdstring.setWeirdString(null);
+		myweirdstring.convertDigitsToRomanNumeralsInSubstring(1, 13);
 	}
 
 	@Test
